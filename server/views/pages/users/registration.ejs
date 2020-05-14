@@ -1,0 +1,81 @@
+<div class="clearfix"></div>
+<div class="container signup">
+  <h1>SAFE YOURSELF FROM HOMELESSNESS</h1>
+  <h2>Sign Up</h2>
+
+  <form
+    method="POST"
+    action="/users/registration"
+    onsubmit="return checksubmit()"
+    enctype="multipart/form-data"
+  >
+    <div class="alert-issues alert alert-danger"></div>
+    <% if(error) { %>
+    <div class="alert alert-danger">
+      <%- error %>
+    </div>
+    <% } %> <% if(success) { %>
+    <div class="alert alert-success">
+      <%- success %>
+    </div>
+    <% }%>
+    <div class="form-group">
+      <label for="username">Name</label>
+      <input
+        id="username"
+        onChange="checkname(this)"
+        type="username"
+        class="form-control text-input"
+        name="username"
+        placeholder="Enter your Name"
+      />
+    </div>
+    <input type="hidden" name="role" value="Member" />
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input
+        id="email"
+        type="email"
+        onChange="checkemail(this)"
+        class="form-control text-input"
+        name="email"
+        aria-describedby="emailHelp"
+        placeholder="Enter Email"
+      />
+    </div>
+    <div class="form-group">
+      <label for="Password">Password</label>
+      <input
+        id="password"
+        type="password"
+        onChange="checkpassword(this)"
+        class="form-control text-input"
+        name="password"
+        placeholder="Enter Password"
+      />
+    </div>
+    <div class="form-group">
+      <label for="password2">Retype-Password</label>
+      <input
+        type="password"
+        onChange="checkrepassword(this)"
+        class="form-control text-input"
+        name="password2"
+        id="password2"
+        placeholder="Retype-Password"
+      />
+    </div>
+    <div class="form-group">
+      <label for="image">Profile Image</label>
+      <input
+        type="file"
+        onChange="checkimage(this)"
+        class="form-control"
+        name="image"
+        id="image"
+        placeholder="Image for profile"
+      />
+    </div>
+    <button type="submit" class="btn">Submit</button>
+  </form>
+</div>

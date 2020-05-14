@@ -1,0 +1,95 @@
+<!-----modal-->
+<div
+  class="modal fade"
+  id="AddUser"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="ModalUser"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title" id="ModalUser">Add User</h1>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="POST" id="userForm" action="/users/adduser" onsubmit="return checksubmit()" enctype="multipart/form-data">
+          <div class="alert-issues alert alert-danger"></div>
+          <input type="hidden" id="createduser" name="createduser" value="<%- user.id %>" />
+          <input type="hidden" name="updateduser" value="<%- user.id %>" />
+
+          <div class="form-group">
+            <label for="username">Name</label>
+            <input
+              id="username"
+              onChange="checkname(this)"
+              type="name"
+              class="form-control text-input"
+              name="username"
+              placeholder="Enter your Name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="role">Role</label><br />
+            <select id="role" name="role" class="text-input" onChange="checkrole(this)">
+              <option></option>
+              <option>Developer</option>
+              <option>Content Writer</option>
+              <option>Member</option>
+              <option>Monitor</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input
+              id="email"
+              type="email"
+              onChange="checkemail(this)"
+              class="form-control text-input"
+              name="email"
+              aria-describedby="emailHelp"
+              placeholder="Enter Email"
+            />
+          </div><div class="form-group">
+            <label for="Password">Password</label>
+            <input
+              id="password"
+              type="password"
+              onChange="checkpassword(this)"
+              class="form-control text-input"
+              name="password"
+              placeholder="Enter Password"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password2">Retype-Password</label>
+            <input
+              type="password"
+              onChange="checkrepassword(this)"
+              class="form-control text-input"
+              name="password2"
+              id="password2"
+              placeholder="Retype-Password"
+            />
+            </div>
+            <div class="form-group">
+              <label for="image">Profile Image</label>
+              <input
+                type="file"
+                onChange="checkimage(this)"
+                class="form-control text-input"
+                name="image"
+                id="image"
+                placeholder="Image for profile"
+              />
+            </div>
+          <button type="submit" class="btn">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

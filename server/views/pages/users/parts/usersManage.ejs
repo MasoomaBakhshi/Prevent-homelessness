@@ -1,0 +1,89 @@
+<div class="tab-pane fade" id="users" role="tabpanel" aria-labelledby="users-tab">
+  <h2>Users Management</h2>
+  <a href="#" class="btn btn-sm float-right AddUser" data-toggle="modal" data-target="#AddUser">
+    <i class="fas fa-plus-circle"></i> Add User
+  </a>
+  <div class="table-responsive">
+    <table class="table table-striped table-sm">
+      <thead>
+        <tr class="bg-primary">
+          <th>ID #</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Operations</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% users.forEach(elem => { %>
+
+        <tr class="table-primary">
+          <td><%- elem._id %></td>
+          <td>
+            <% if(!elem.image){%>
+            <img
+              class="rounded-circle img-fluid img-thumbnail"
+              src="/images/profile.png"
+              width="40"
+              height="40"
+            />
+            <%}else{%>
+            <img
+              class="rounded-circle img-fluid img-thumbnail"
+              title="<%= elem.username %>"
+              src="/users/imagestn/<%-elem.image%>"
+            />
+            <%}%> <%- elem.username %>
+          </td>
+          <td><%- elem.email %></td>
+          <td><%- elem.role %></td>
+          <td>
+            <span
+              title="Update Details"
+              class="AddUser"
+              data-link="/users/updateuser/<%= elem._id %>"
+              data-id="<%= elem._id %>"
+              data-name="<%= elem.username %>"
+              data-createduser="<%= elem.createduser %>"
+              data-role="<%= elem.role %>"
+              data-email="<%= elem.email %>"
+              data-password="<%= elem.password %>"
+              data-image="/users/images/<%= elem.image %>"
+              data-toggle="modal"
+              data-target="#UpdateUser"
+            >
+              <i class="fas fa-edit"></i>
+            </span>
+            <span
+              title="Edit Password"
+              class="AddUser"
+              data-link="/users/updatepassword/<%- elem._id %>"
+              data-id="<%- elem._id %>"
+              data-name="<%- elem.username %>"
+              data-createduser="<%- elem.createduser %>"
+              data-role="<%- elem.role %>"
+              data-email="<%- elem.email %>"
+              data-password="<%- elem.password %>"
+              data-toggle="modal"
+              data-target="#passwordModal"
+            >
+              <i class="fas fa-key"></i>
+            </span>
+            <span
+              title="Delete User"
+              data-id="/users/deleteuser/<%- elem._id %>"
+              data-name="<%- elem.username %>"
+              class="delete"
+              data-toggle="modal"
+              data-Name="delete"
+              data-target="#delete"
+            >
+              <i class="fas fa-trash-alt"></i>
+            </span>
+          </td>
+        </tr>
+        <% });%>
+      </tbody>
+    </table>
+  </div>
+</div>

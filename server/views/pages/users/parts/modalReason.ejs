@@ -1,0 +1,63 @@
+<!-----modal-->
+<script>
+  var storedServices=<%- JSON.stringify(storedServices)  %>;
+</script>
+
+<div
+  class="modal fade"
+  id="AddReason"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="ModalReason"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title" id="ModalReason"></h1>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="POST" action="" id="reasonForm" onsubmit="return checksubmit()">
+          <div class="alert-issues alert alert-danger"></div>
+          <input type="hidden" name="createduser" value="<%- user.id %>" />
+          <input type="hidden" name="updateduser" value="<%- user.id %>" />
+          <div class="form-group">
+            <label for="reason">Reason</label>
+            <input
+              type="text"
+              class="form-control"
+              id="reason"
+              name="reason"
+              onChange="checkname(this)"
+              placeholder="Enter Reason"
+            />
+          </div>
+          <div class="form-group">
+            <label for="reason"
+              >Class Symbol for Reason (Please refer to
+              <a href="https://fontawesome.com/icons?d=gallery"> Fontawesome 5 website</a> for
+              input.)
+            </label>
+            <input
+              type="text"
+              class="form-control"
+              id="symbol"
+              name="symbol"
+              onChange="checksymbol(this)"
+              placeholder="Enter class name for Symbol"
+            />
+          </div>
+
+          <div id="choices"></div>
+          <p class="btn-primary" onclick="createQuestion();">
+            Add detail and needed service for this Reason
+          </p>
+          <button type="#" class="btn">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,441 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+}
+/* body's styles*/
+body {
+  color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1em;
+  overflow: visible;
+}
+h1 {
+  color: green;
+  text-align: center;
+  font-weight: bold;
+  font-size: 35px;
+  text-transform: uppercase;
+  margin-top: 0.8em;
+}
+h2 {
+  color: blue;
+  text-align: center;
+  font-weight: bold;
+  font-size: 27px;
+  text-transform: capitalize;
+  margin-top: 0.8em;
+}
+
+h3 {
+  color: yellowgreen;
+  font-weight: bold;
+  font-size: 23px;
+  margin-bottom: 0.8em;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+/* margin around breadcrums*/
+.breadcrums {
+  margin: 2% 5%;
+}
+a {
+  text-decoration: none;
+  color: #6610f2;
+  font-size: 1em;
+}
+
+nav {
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 2em;
+  text-align: center;
+}
+.access {
+  display: inline;
+  background-color: darkred;
+  color: #ffffff;
+  padding: 0.3em;
+}
+.navbar .col-md-3 {
+  margin: 0.5em auto;
+}
+.font,
+.font-type {
+  display: inline;
+  border: 2px solid #ffffff;
+  padding: 0.3em;
+  margin: 0.3em;
+}
+.font:hover,
+.font-type:hover {
+  background-color: #ffffff;
+  color: black;
+  cursor: pointer;
+}
+.exit {
+  display: inline;
+  background-color: darkred;
+  color: #ffffff;
+  padding: 0.5em;
+}
+.home {
+  background-color: white;
+  text-decoration: none;
+  color: darkred;
+  cursor: pointer;
+}
+.home:hover {
+  color: go;
+}
+.exit:hover {
+  background-color: white;
+  text-decoration: none;
+  color: darkred;
+  cursor: pointer;
+}
+ul {
+  width: 100%;
+  margin: auto;
+  padding: 0.3em;
+}
+ul li {
+  list-style-type: none;
+  text-align: center;
+  margin: 0.3em auto;
+}
+.selected {
+  color: darkred;
+}
+.Yelselected {
+  color: gold;
+}
+.alert {
+  width: 400px;
+  margin: auto;
+}
+.alert-issues {
+  display: none;
+  text-align: left;
+}
+.alert-success,
+.alert-danger {
+  padding: 10px;
+  text-align: center;
+}
+/* styles for index pages*/
+.content {
+  background: #ffffff;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.signup {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.reasons {
+  border-radius: 10px;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.4);
+  padding: 30px;
+  color: white;
+  background-color: #007bff;
+  text-align: center;
+  border: 1px solid #007bff;
+  min-width: 200px;
+  margin: 20px auto;
+}
+.reasons span {
+  border-left: 2px dashed white;
+  margin-left: 10px;
+  padding-left: 10px;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+.symbol {
+  font-size: 30px;
+}
+.reasons:hover,
+.reasons:visited {
+  color: #007bff;
+  background-color: white;
+  cursor: pointer;
+}
+.questions {
+  border-radius: 25px;
+  border-bottom-left-radius: 0;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.4);
+  padding: 25px 15px;
+  color: white;
+  background-color: #007bff;
+  font-size: 18px;
+  text-align: center;
+  border: 1px solid #007bff;
+  min-width: 200px;
+  margin: auto;
+  margin-bottom: 1em;
+}
+.questions:hover,
+.questions:visited {
+  color: #007bff;
+  background-color: white;
+  cursor: pointer;
+}
+
+/* styles for messages display div*/
+.recomend {
+  background-color: green;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+/* styles for form's elements*/
+form {
+  padding-top: 1em;
+}
+select {
+  width: 200px;
+  padding: 0.2em;
+  background-color: #ffffff;
+  border: 1px solid darkred;
+}
+.text-input {
+  width: 400px;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 2px solid #007bff;
+  color: #6610f2;
+}
+#image,
+#serviceimage,
+#updateimage {
+  border: 2px solid #007bff;
+  width: 400px;
+  color: #fff;
+  cursor: pointer;
+  padding-bottom: 36px;
+}
+.btn {
+  width: 400px;
+  margin: auto;
+  padding: 1em;
+  background-color: #6610f2;
+  color: white;
+  text-align: center;
+}
+.btn:hover,
+.btn:visited {
+  color: white;
+  background-color: #007bff;
+}
+.btn-primary {
+  padding: 0.5em 8em;
+  text-align: center;
+  border-radius: 0.3em;
+}
+.clearfix {
+  padding: 3.5em;
+}
+.clearfix2 {
+  padding: 1em;
+}
+/* footer*/
+footer {
+  text-align: center;
+}
+
+/* tabs */
+.service-div {
+  background-color: silver;
+  padding: 1em;
+  margin-top: 2em;
+}
+.container h2 {
+  text-align: left;
+}
+.tab-content {
+  padding: 1em;
+}
+.tabscontent {
+  display: block;
+  margin: 1em auto;
+  background-color: white;
+  padding: 1em;
+}
+.info {
+  margin: 5px auto;
+  font-size: 14px;
+}
+.info a {
+  text-decoration: none;
+  color: black;
+}
+.info strong {
+  color: darkgreen;
+  font-weight: 600;
+}
+.note {
+  color: yellowgreen;
+  font-size: 16px;
+  padding-bottom: 10px;
+}
+.nav-link {
+  padding: 1em;
+  font-size: 1em;
+}
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: #6610f2;
+  color: white;
+  border-radius: 0;
+}
+.tab-pane ul {
+  margin-top: -10px;
+}
+.tab-pane ul li {
+  border-left: 2px solid #6610f2;
+  text-align: left;
+  padding-left: 10px;
+  margin-bottom: 5px;
+}
+.image-cover {
+  width: 100%;
+  margin: auto;
+  height: 250px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/**************************modal***********/
+.modal {
+  padding: 3em;
+}
+.modal-body {
+  border: 0px;
+  text-align: center;
+}
+.modal-body input,
+.modal-body textarea,
+.modal-body select {
+  padding: 0.3em;
+  background-color: #ffffff;
+  border: 2px solid #007bff;
+  margin-bottom: 0.5em;
+  color: #6610f2;
+  width: 100%;
+}
+.modal-body .row {
+  margin-top: 2em;
+  text-align: center;
+}
+.recomended {
+  border: 2px solid darkred;
+}
+.modal-body .col-md-4 {
+  padding-bottom: 3em;
+  text-align: center;
+}
+.icon-neutral:before {
+  content: '\e9f7';
+}
+.material-icons {
+  display: block;
+  font-size: 5em;
+}
+.caption {
+  padding-bottom: 2em;
+}
+.modal-body .col-md-4:hover .caption {
+  color: gold;
+}
+.modal-body .col-md-4:hover .material-icons {
+  color: gold;
+}
+.slected {
+  color: darkred;
+}
+
+/******admin***************/
+.admin-nav {
+  background-color: green;
+}
+.nav-item {
+  text-decoration: none;
+  color: #ffffff;
+}
+.admin-nav:hover {
+  color: #ffffff;
+}
+.admin {
+  margin: 0;
+  padding-top: 8em;
+  text-align: center;
+  border-bottom: 2px solid darkred;
+  padding-bottom: 2em;
+}
+.image-profile {
+  width: 200px;
+  height: 200px;
+}
+.displaycontent {
+  margin-top: 2em;
+}
+.displaycontent .btn {
+  margin-bottom: 2em;
+}
+.table-responsive {
+  margin-top: 2em;
+  font-size: 0.8em;
+  text-transform: capitalize;
+}
+.profie {
+  font-size: 1.3em;
+}
+.profie td {
+  padding: 2.5em;
+}
+td span {
+  color: darkred;
+  margin-right: 0.5em;
+  text-align: center;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+@media only screen and (max-width: 1300px) and (min-width: 780px) {
+  .clearfix {
+    padding: 4em;
+  }
+}
+@media only screen and (max-width: 780px) {
+  .clearfix {
+    padding: 6em;
+  }
+  .clearfix2 {
+    padding: 6em;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .admin {
+    padding-top: 12em;
+  }
+}
+/*error page*/
+#main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}

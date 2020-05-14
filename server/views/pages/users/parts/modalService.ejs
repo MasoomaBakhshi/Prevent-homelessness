@@ -1,0 +1,182 @@
+<!-----modal-->
+<div
+  class="modal fade"
+  id="AddService"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="ModalService"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title" id="ModalService"></h1>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form
+          method="POST"
+          id="serviceForm"
+          action=""
+          onsubmit="return checksubmit()"
+          enctype="multipart/form-data"
+        >
+          <div class="alert-issues alert alert-danger"></div>
+          <input type="hidden" name="createduser" value="<%- user.id %>" />
+          <input type="hidden" name="updateduser" value="<%- user.id %>" />
+          <div class="form-group">
+            <label for="organization">Organization Name</label>
+            <input
+              type="name"
+              class="form-control"
+              id="organization"
+              name="organization"
+              onChange="checkorganization(this)"
+              placeholder="Enter Organization Name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="phone">Organization Phone</label>
+            <input
+              type="tel"
+              class="form-control"
+              id="phone"
+              name="phone"
+              aria-describedby="phone"
+              onChange="checkphone(this)"
+              placeholder="Enter Organization Phone"
+            />
+          </div>
+          <div class="form-group">
+            <label for="address">Organization Address</label>
+            <input
+              type="text"
+              class="form-control"
+              id="street"
+              name="street"
+              aria-describedby="street"
+              onChange="checkaddress(this)"
+              placeholder="Enter Organization's Street Name and No"
+            /><input
+              type="text"
+              class="form-control"
+              id="subrub"
+              name="subrub"
+              aria-describedby="subrub"
+              onChange="checksubrub(this)"
+              placeholder="Enter Organization Subrub"
+            /><input
+              type="text"
+              class="form-control"
+              id="postcode"
+              name="postcode"
+              onChange="checkpostcode(this)"
+              aria-describedby="postcode"
+              placeholder="Enter Organization Postcode"
+            />
+            <select name="state" id="state" class="state" onChange="checkmode(this)">
+              <option value="QLD">Queensland</option>
+              <option value="NSW">New South Wales</option>
+              <option value="VIC">Victoria</option>
+              <option value="WA">Western Australia</option>
+              <option value="SA">South Australia</option>
+              <option value="TAS">Tasmania</option>
+              <option value="ACT">Australian Capital Territory</option>
+              <option value="NT">Northern Territory</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="web">Organization Website</label>
+            <input
+              type="url"
+              class="form-control"
+              id="website"
+              name="website"
+              aria-describedby="website"
+              onChange="checkurl(this)"
+              placeholder="Enter Organization's URL"
+            />
+          </div>
+          <div class="form-group">
+            <label for="body">Organization Summary</label>
+            <textarea
+              name="body"
+              class="form-control"
+              id="body"
+              onChange="checkdesciption(this)"
+              aria-describedby="body"
+              placeholder="Enter Organization Summary"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="note">Any essentail Note</label>
+            <input
+              type="text"
+              class="form-control"
+              id="note"
+              name="note"
+              onChange="checkbrief(this)"
+              aria-describedby="note"
+              placeholder="Enter any essentail Note of Organization e.g open hours etc."
+            />
+          </div>
+          <div class="form-group">
+            <label for="services">Organization's Services (Hold Ctrl Key for multiple)</label>
+            <select id="services" name="services[]" class="services" multiple="multiple"
+              ><option value=""></option>
+              <% storedServices.forEach(storedservice => { %>
+              <option value="<%-storedservice%>"><%-storedservice%></option>
+              <% }); %>
+            </select>
+            <label for="organizationMoreServices"
+              >If service is not mentioned above (use comma to separate if more then one
+              Services)</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              name="moreservices[]"
+              id="moreservices"
+              aria-describedby="moreservices"
+              placeholder="If service is not mentioned above"
+            />
+          </div>
+          <div class="form-group">
+            <label for="mode"> Organization's Service Mode (Hold Ctrl Key for multiple)</label>
+
+            <select
+              id="mode"
+              name="mode[]"
+              class="mode"
+              multiple="multiple"
+              onChange="checkmode(this)"
+              required
+            >
+              <option value="lines">Hot Lines</option>
+              <option value="forum">Forum</option>
+              <option value="chat">Chat</option>
+              <option value="locate">Meet for Counselling</option>
+              <option value="info">Online Infomation or Blog or Article</option>
+              <option value="comunity">Comunity Service</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="image">Image</label>
+            <input
+              type="file"
+              onChange="checkimage(this)"
+              class="form-control"
+              name="image"
+              id="serviceimage"
+              placeholder="Image for Reference"
+            />
+          </div>
+
+          <button type="submit" class="btn">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

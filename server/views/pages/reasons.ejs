@@ -1,0 +1,19 @@
+<div class="clearfix"></div>
+<div class="container">
+  <h1>SAFE YOURSELF FROM HOMELESSNESS</h1>
+  <h3>What is taking you towards Homelessness?</h3>
+  <div class="row">
+    <% reasons.forEach(reason => {%>
+    <div class="col-md-4">
+      <div data-url="/reasons/<%- reason.reason %>" class="reasons submit">
+        <i class="<%- reason.symbol %> symbol"></i> <span><%- reason.reason %></span>
+      </div>
+    </div>
+    <% }); %>
+    <div class="col-md-4">
+      <div data-url="/reasons/all" class="reasons submit">
+        <i class="far fa-question-circle symbol"></i> <span>Don't Know</span>
+      </div>
+    </div>
+  </div>
+</div>

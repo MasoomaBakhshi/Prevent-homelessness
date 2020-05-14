@@ -1,0 +1,66 @@
+<div class="clearfix"></div>
+<div class="container">
+  <h1>SAFE YOURSELF FROM HOMELESSNESS</h1>
+  <h3>What do you need help with?</h3>
+  <div class="row">
+    <% reason.forEach(reas => { %> <% reas.questions.forEach(quest => {%> %>
+    <div class="col-md-4">
+      <div
+        class="questions button"
+        data-toggle="modal"
+        data-url="/services/<%- quest.service %>"
+        data-target="#level"
+      >
+        <%- quest.question %>
+      </div>
+    </div>
+
+    <% }) })%>
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="level"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="ModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title" id="ModalLabel">How much is it effecting you?</h1>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-4" id="level1" data-number="1" data-value="ok">
+            <span class="material-icons"><i class="fas fa-meh-blank"></i></span>
+            <strong class="caption">I feel, It will effect me. </strong>
+          </div>
+          <div class="col-md-4" id="level2" data-number="2" data-value="low">
+            <span class="material-icons"><i class="fas fa-meh"></i></span>
+            <strong class="caption">It is bad but I'm ok.</strong>
+          </div>
+          <div class="col-md-4" id="level3" data-number="3" data-value="mid">
+            <span class="material-icons"><i class="fas fa-frown"></i></span>
+            <strong class="caption">It is getting worse.</strong>
+          </div>
+          <div class="col-md-4" id="level4" data-number="4" data-value="moderate">
+            <span class="material-icons"><i class="fas fa-sad-tear"></i></span>
+            <strong class="caption">It is a serious deal now.</strong>
+          </div>
+          <div class="col-md-4" id="level5" data-number="5" data-value="high">
+            <span class="material-icons"><i class="fas fa-sad-cry"></i></span>
+            <strong class="caption">I need an urgent help.</strong>
+          </div>
+        </div>
+        <center><button type="button" class="btn" id="submit">Submit</button></center>
+      </div>
+    </div>
+  </div>
+</div>

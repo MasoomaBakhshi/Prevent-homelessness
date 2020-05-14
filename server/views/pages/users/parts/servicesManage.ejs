@@ -1,0 +1,80 @@
+<div class="tab-pane fade" id="services" role="tabpanel" aria-labelledby="services-tab">
+  <h2>Services Management</h2>
+  <a
+    href="#"
+    class="btn btn-sm float-right AddService"
+    data-toggle="modal"
+    data-link="./users/addservice "
+    data-target="#AddService"
+  >
+    <i class="fas fa-plus-circle"></i> Add service
+  </a>
+  <div class="table-responsive">
+    <table class="table table-striped table-sm">
+      <thead>
+        <tr class="bg-primary">
+          <th>ID #</th>
+          <th>Organization Name</th>
+          <th>Services</th>
+          <th>Phone</th>
+          <th>Website</th>
+          <th>Address</th>
+          <th>Mode</th>
+          <th>Operations</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% services.forEach(service => { %>
+
+        <tr class="table-primary">
+          
+          <td><%- service._id %></td>
+          <td><%- service.organization %></td>
+          <td><%- service.services %></td>
+          <td><%- service.phone %></td>
+          <td><%- service.website %></td>
+          <td>
+            <%- service.address.street %> <%- service.address.subrub %> <%- service.address.postcode
+            %>
+          </td>
+          <td><%- service.mode %></td>
+          <td>
+            <span
+            title="Edit"
+              data-link="/users/updateservice/<%- service._id %>"
+              data-id="<%- service._id %>"
+              data-name="<%- service.organization %>"
+              data-phone="<%- service.phone %>"
+              data-website="<%- service.website %>"
+              data-mode="<%- service.mode %>"
+              data-body="<%- service.body %>"
+              data-services="<%- service.services %>"
+              data-note="<%- service.note %>"
+              data-street="<%- service.address.street %>"
+              data-subrub="<%- service.address.subrub %>"
+              data-postcode="<%- service.address.postcode %>"
+              data-state="<%- service.address.state %>"
+              class="AddService"
+              data-toggle="modal"
+              data-target="#AddService"
+            >
+              <i class="fa fa-edit" aria-hidden="true"></i>
+          </span>
+            <span
+            title="Delete"
+              data-id="/users/deletservice/<%- service._id %>"
+              data-name="<%- service.organization %>"
+              class="delete"
+              data-toggle="modal"
+              data-Name="delete"
+              data-target="#delete"
+            >
+              <i class="fas fa-trash-alt"></i>
+            </p>
+          </td>
+        </tr>
+        <% });%>
+      </tbody>
+    </table>
+  </div>
+</div>

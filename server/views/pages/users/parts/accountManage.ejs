@@ -1,0 +1,51 @@
+<div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
+  <h2>Account Management</h2>
+  <p
+    class="btn btn-sm float-left AddUser"
+    data-link="/users/UpdateUser/<%= user._id %>"
+    data-id="<%= user._id %>"
+    data-name="<%= user.username %>"
+    data-createduser="<%= user.createduser %>"
+    data-role="<%= user.role %>"
+    data-email="<%= user.email %>"
+    data-password="<%= user.password %>"
+    data-image="/users/images/<%= user.image %>"
+    data-toggle="modal"
+    data-target="#UpdateUser"
+  >
+    <i class="fas fa-edit"></i> Update Your Details
+  </p>
+  <p
+    class="btn btn-sm float-right AddUser"
+    data-link="/users/updatepassword/<%- user._id %>"
+    data-id="<%- user._id %>"
+    data-name="<%- user.username %>"
+    data-createduser="<%- user.createduser %>"
+    data-role="<%- user.role %>"
+    data-email="<%- user.email %>"
+    data-password="<%- user.password %>"
+    data-toggle="modal"
+    data-target="#passwordModal"
+  >
+    <i class="fas fa-key"></i> Change Password
+  </p>
+  <table class="table profile">
+    <tbody>
+      <% if(user){%>
+      <tr>
+        <td class="bg-primary profiletd"><strong>Name</strong></td>
+        <td class="table-primary profiletd"><%- user.username %></td>
+      </tr>
+      <tr>
+        <td class="bg-primary profiletd"><strong>Email</strong></td>
+        <td class="table-primary profiletd"><%- user.email %></td>
+      </tr>
+
+      <tr>
+        <td class="bg-primary profiletd"><strong>Role</strong></td>
+        <td class="table-primary profiletd"><%- user.role %></td>
+      </tr>
+      <%} %>
+    </tbody>
+  </table>
+</div>

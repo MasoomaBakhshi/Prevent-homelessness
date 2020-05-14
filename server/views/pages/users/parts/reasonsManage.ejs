@@ -1,0 +1,69 @@
+<div class="tab-pane fade" id="reasons" role="tabpanel" aria-labelledby="reasons-tab">
+  <h2>Reasons Management</h2>
+  <a
+    href="#"
+    class="btn btn-sm float-right AddReason"
+    data-toggle="modal"
+    data-target="#AddReason"
+    data-link="/users/addreason"
+  >
+    <i class="fas fa-plus-circle"></i> Add Reason
+  </a>
+  <div class="table-responsive">
+    <table class="table table-striped table-sm">
+      <thead>
+        <tr class="bg-primary">
+          <th>ID #</th>
+          <th>Reason</th>
+          <th>Questions</th>
+          <th>Required Services</th>
+          <th>Operations</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% reasons.forEach(reason => { %>
+        <tr class="table-primary">
+          <td><%- reason._id %></td>
+          <td>
+            <i class="<%- reason.symbol %>" aria-hidden="true"></i>
+            <%- reason.reason %>
+          </td>
+
+          <% var i=0; var question=[]; var service=[]; reason.questions.forEach(element => {
+          question.push(element.question); service.push(element.service); i++;});%>
+          <td><%- question %></td>
+          <td><%- service %></td>
+          <td>
+            <span
+              title="Delete"
+              data-link="/users/updatereason/<%- reason._id %>"
+              data-id="<%- reason._id %>"
+              data-name="<%- reason.reason %>"
+              data-symbol="<%- reason.symbol %>"
+              data-question="<%- question %>"
+              data-service="<%- service %>"
+              data-option="<%- i %>"
+              class="AddReason"
+              data-toggle="modal"
+              data-target="#AddReason"
+            >
+              <i class="fa fa-edit" aria-hidden="true"></i>
+            </span>
+            <span
+              title="Edit"
+              data-id="/users/deletereason/<%- reason._id %>"
+              data-name="<%- reason.reason %>"
+              class="delete"
+              data-toggle="modal"
+              data-Name="delete"
+              data-target="#delete"
+            >
+              <i class="fas fa-trash-alt"></i>
+            </span>
+          </td>
+        </tr>
+        <% });%>
+      </tbody>
+    </table>
+  </div>
+</div>

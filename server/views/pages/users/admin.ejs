@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <main role="main" class="tab-content" id="myTabContent">
+    <div class="admin">
+      <h1>Admin Dashboard</h1>
+      <% if(!user.image){%>
+      <img class="rounded-circle img-fluid image-profile" src="/images/profile.png" />
+      <%}else{%>
+      <img class="rounded-circle img-fluid image-profile" src="./users/images/<%-user.image%>" />
+      <%}%>
+      <h2><%- user.username %></h2>
+      <h3><%- user.email %></h3>
+      <a href="/" class="home float-left" title="Home Page">
+        Home Page <i class="fas fa-home" aria-hidden="true"></i></a
+      ><br />
+    </div>
+    <% if(error) { %>
+    <div class="alert-danger"><strong>Error Message:</strong> <%- error %></div>
+    <% } %> <% if(success) { %>
+    <div class="alert-success"><strong>Success Message:</strong> <%- success %></div>
+    <% } %>
+    <section class="displaycontent">
+      <%- include('./parts/adminNavigation') %>
+
+      <div class="tab-content" id="v-pills-tabContent">
+        <%- include('./parts/accountManage') %> <%- include('./parts/usersManage') %> <%-
+        include('./parts/reasonsManage') %> <%- include('./parts/servicesManage') %> <%-
+        include('./parts/modalUserupdate') %><%- include('./parts/modalUser') %><%-
+        include('./parts/changePassword') %><%- include('./parts/modalReason') %><%-
+        include('./parts/modalService') %><%- include('./parts/modalDelete') %>
+      </div>
+    </section>
+  </main>
+</div>

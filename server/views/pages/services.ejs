@@ -1,0 +1,236 @@
+<div class="clearfix"></div>
+<h1>SAFE YOURSELF FROM BEING HOMELESSNESS</h1>
+<h2>Services which could help you in this situation</h2>
+<p class="recomend">Based on your situation, We recomend the <strong class="selected">red highlited</strong> service but you can go with any other services which is more feasible to you.</p>
+<div class="container service-div" id="services" onload="checkLevel();" >
+  <ul class="nav nav-pills nav-justified" id="pills-tab" role="tablist">
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        id="lines-tab"
+        data-toggle="tab"
+        href="#lines"
+        role="tab"
+        aria-controls="lines"
+        aria-selected="true"
+        >Lines <i class="fas fa-phone" aria-hidden="true"></i
+      ></a>
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        id="locate-tab"
+        data-toggle="tab"
+        href="#locate"
+        role="tab"
+        aria-controls="locate"
+        aria-selected="false"
+        >Locate <i class="fas fa-map-marker" aria-hidden="true"></i
+      ></a>
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        id="chat-tab"
+        data-toggle="tab"
+        href="#chat"
+        role="tab"
+        aria-controls="chat"
+        aria-selected="false"
+        >Chat <i class="fas fa-comments" aria-hidden="true"></i
+      ></a>
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        id="info-tab"
+        data-toggle="tab"
+        href="#info"
+        role="tab"
+        aria-controls="info"
+        aria-selected="true"
+        >Info <i class="fas fa-info-circle" aria-hidden="true"></i
+      ></a>
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        id="forum-tab"
+        data-toggle="tab"
+        href="#forum"
+        role="tab"
+        aria-controls="forum"
+        aria-selected="false"
+        >Forum <i class="fas fa-comment-dots"></i></a>
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        id="services-tab"
+        data-toggle="tab"
+        href="#services"
+        role="tab"
+        aria-controls="services"
+        aria-selected="false"
+        >Comunity Services <i class="fas fa-users" aria-hidden="true"></i
+          ></i
+      ></a>
+    </li>
+  </ul>
+
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade" id="lines" role="tabpanel" aria-labelledby="lines-tab">
+      <% services.forEach(serve => { if (serve.mode.includes('lines')) { %>
+      <div class="tabscontent">
+        <% if(serve.image){%>          
+            <div class="image-cover img-fluid " style="background-image: url('/users/images/<%-serve.image%>')" title="<%= serve.organization %>"></div>
+          <%}%>
+        <h2><%- serve.organization %></h2>
+        <strong class="note"><%= serve.note %></strong>
+        <p><%- serve.body %></p>
+        <div class="info">
+          <strong><i class="fas fa-info-circle"></i> Website: </strong><a href="<%=serve.website%>"><%= serve.website %></a>
+        </div>
+        <div class="info">
+          <strong><i class="fas fa-map-marked-alt"></i> Address: </strong><a href="https://www.google.com/maps/place/<%= serve.address.street %>+<%= serve.address.subrub
+            %><%= serve.address.state%>+<%= serve.address.postcode %>" ><%= serve.address.street %> <%=serve.address.subrub %> <%=serve.address.state%> <%= serve.address.postcode %></a>
+        </div>
+        <div class="info">
+          <strong><i class="fas fa-phone"></i> Phone: </strong><a href="tel:<%- serve.phone %>" ><%- serve.phone %></a>
+        </div>
+        <a href="tel:<%- serve.phone %>" class="btn-primary btn-block"
+          > Call <%- serve.phone %>  </a>
+      </div>
+      <% }}) %>
+    </div>
+    <div class="tab-pane fade" id="locate" role="tabpanel" aria-labelledby="locate-tab">
+      <% services.forEach(serve => { if (serve.mode.includes('locate')) {%>
+        <div class="tabscontent">
+          <% if(serve.image){%>          
+              <div class="image-cover img-fluid " style="background-image: url('/users/images/<%-serve.image%>')" title="<%= serve.organization %>"></div>
+            <%}%>
+          <h2><%- serve.organization %></h2>
+          <strong class="note"><%= serve.note %></strong>
+          <p><%- serve.body %></p>
+          <div class="info">
+            <strong><i class="fas fa-info-circle"></i> Website: </strong><a href="<%=serve.website%>"><%= serve.website %></a>
+          </div>
+          <div class="info">
+            <strong><i class="fas fa-map-marked-alt"></i> Address: </strong><a href="https://www.google.com/maps/place/<%= serve.address.street %>+<%= serve.address.subrub
+              %><%= serve.address.state%>+<%= serve.address.postcode %>" ><%= serve.address.street %> <%=serve.address.subrub %> <%=serve.address.state%> <%= serve.address.postcode %></a>
+          </div>
+          <div class="info">
+            <strong><i class="fas fa-phone" aria-hidden="true"></i> Phone: </strong><a href="tel:<%- serve.phone %>" ><%- serve.phone %></a>
+          </div>
+          <a
+          href="https://www.google.com/maps/place/<%- serve.address.street %>+<%- serve.address.subrub %>+<%- serve.address.state
+          %>+<%- serve.address.postcode %>"
+          class="btn-primary btn-block"
+          target="_blank"
+          >Locate : <%- serve.address.street %> <%- serve.address.subrub %> <%-
+          serve.address.state %> <%- serve.address.postcode %></a
+        >
+      </div>
+      <% }}) %>
+    </div>
+    <div class="tab-pane fade" id="chat" role="tabpanel" aria-labelledby="chat-tab">
+      <% services.forEach(serve => { if (serve.mode.includes('chat')){%>
+        <div class="tabscontent">
+          <% if(serve.image){%>          
+              <div class="image-cover img-fluid " style="background-image: url('/users/images/<%-serve.image%>')" title="<%= serve.organization %>"></div>
+            <%}%>
+          <h2><%- serve.organization %></h2>
+          <strong class="note"><%= serve.note %></strong>
+          <p><%- serve.body %></p>
+          <div class="info">
+            <strong><i class="fas fa-info-circle"></i> Website: </strong><a href="<%=serve.website%>"><%= serve.website %></a>
+          </div>
+          <div class="info">
+            <strong><i class="fas fa-map-marked-alt"></i> Address: </strong><a href="https://www.google.com/maps/place/<%= serve.address.street %>+<%= serve.address.subrub
+              %><%= serve.address.state%>+<%= serve.address.postcode %>" ><%= serve.address.street %> <%=serve.address.subrub %> <%=serve.address.state%> <%= serve.address.postcode %></a>
+          </div>
+          <div class="info">
+            <strong><i class="fas fa-phone" aria-hidden="true"></i> Phone: </strong><a href="tel:<%- serve.phone %>" ><%- serve.phone %></a>
+          </div>
+        <a href="<%- serve.website %>" class="btn-primary btn-block" target="_blank"
+          > Chat </a
+        >
+      </div>
+      <% }}) %>
+    </div>
+    <div class="tab-pane fade" id="info" role="tabpanel" aria-labelledby="info-tab">
+      <% services.forEach(serve => { if (serve.mode.includes('info')){ %>
+        <div class="tabscontent">
+          <% if(serve.image){%>          
+              <div class="image-cover img-fluid " style="background-image: url('/users/images/<%-serve.image%>')" title="<%= serve.organization %>"></div>
+            <%}%>
+          <h2><%- serve.organization %></h2>
+          <strong class="note"><%= serve.note %></strong>
+          <p><%- serve.body %></p>
+          <div class="info">
+            <strong><i class="fas fa-info-circle"></i> Website: </strong><a href="<%=serve.website%>"><%= serve.website %></a>
+          </div>
+          <div class="info">
+            <strong><i class="fas fa-map-marked-alt"></i> Address: </strong><a href="https://www.google.com/maps/place/<%= serve.address.street %>+<%= serve.address.subrub
+              %><%= serve.address.state%>+<%= serve.address.postcode %>" ><%= serve.address.street %> <%=serve.address.subrub %> <%=serve.address.state%> <%= serve.address.postcode %></a>
+          </div>
+          <div class="info">
+            <strong><i class="fas fa-phone" aria-hidden="true"></i> Phone: </strong><a href="tel:<%- serve.phone %>" ><%- serve.phone %></a>
+          </div>
+        <a href="<%- serve.website %>" class="btn-primary btn-block" target="_blank"
+          > More Info</a
+        >
+      </div>
+      <% } }) %>
+    </div>
+    <div class="tab-pane fade" id="forum" role="tabpanel" aria-labelledby="forum-tab">
+      <% services.forEach(serve => { if (serve.mode.includes('forum')) {%>
+        <div class="tabscontent">
+          <% if(serve.image){%>          
+              <div class="image-cover img-fluid " style="background-image: url('/users/images/<%-serve.image%>')" title="<%= serve.organization %>"></div>
+            <%}%>
+          <h2><%- serve.organization %></h2>
+          <strong class="note"><%= serve.note %></strong>
+          <p><%- serve.body %></p>
+          <div class="info">
+            <strong><i class="fas fa-info-circle"></i> Website: </strong><a href="<%=serve.website%>"><%= serve.website %></a>
+          </div>
+          <div class="info">
+            <strong><i class="fas fa-map-marked-alt"></i> Address: </strong><a href="https://www.google.com/maps/place/<%= serve.address.street %>+<%= serve.address.subrub
+              %><%= serve.address.state%>+<%= serve.address.postcode %>" ><%= serve.address.street %> <%=serve.address.subrub %> <%=serve.address.state%> <%= serve.address.postcode %></a>
+          </div>
+          <div class="info">
+            <strong><i class="fas fa-phone" aria-hidden="true"></i> Phone: </strong><a href="tel:<%- serve.phone %>" ><%- serve.phone %></a>
+          </div>
+        <a href="<%- serve.website %>" class="btn-primary btn-block" target="_blank">
+          Forum </a>
+      </div>
+      <% } })%>
+    </div>
+    <div class="tab-pane fade" id="services" role="tabpanel" aria-labelledby="services-tab">
+      <% services.forEach(serve => { if (serve.mode.includes('comunity')) {%>
+        <div class="tabscontent">
+          <% if(serve.image){%>          
+              <div class="image-cover img-fluid " style="background-image: url('/users/images/<%-serve.image%>')" title="<%= serve.organization %>"></div>
+            <%}%>
+          <h2><%- serve.organization %></h2>
+          <strong class="note"><%= serve.note %></strong>
+          <p><%- serve.body %></p>
+          <div class="info">
+            <strong><i class="fas fa-info-circle"></i> Website: </strong><a href="<%=serve.website%>"><%= serve.website %></a>
+          </div>
+          <div class="info">
+            <strong><i class="fas fa-map-marked-alt"></i> Address: </strong><a href="https://www.google.com/maps/place/<%= serve.address.street %>+<%= serve.address.subrub
+              %><%= serve.address.state%>+<%= serve.address.postcode %>" ><%= serve.address.street %> <%=serve.address.subrub %> <%=serve.address.state%> <%= serve.address.postcode %></a>
+          </div>
+          <div class="info">
+            <strong><i class="fas fa-phone" aria-hidden="true"></i> Phone: </strong><a href="tel:<%- serve.phone %>" ><%- serve.phone %></a>
+          </div>
+        <a href="<%- serve.website %>" class="btn-primary btn-block" target="_blank"
+          > Visit '<%=serve.website%>'</a
+        >
+      </div>
+      <% }})%>
+    </div>
+  </div>
+</div>
