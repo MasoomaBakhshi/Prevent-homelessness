@@ -1,0 +1,34 @@
+{
+  "reasons": [
+    {
+      "name": "Domestic Violence",
+      "shortname": "domestic",
+      "icon": "<i class='fa fa-ban' aria-hidden='true'></i>",
+      "questions": [
+        {
+          "service": "budget",
+          "question": "need help in budgeting?"
+        },
+        {
+          "service": "legal",
+          "question": "need help in legal works?"
+        }
+      ]
+    },
+    {
+      "name": "finanical help",
+      "shortname": "financial",
+      "icon": "<i class='fa fa-plus' aria-hidden='true'></i>",
+      "questions": [
+        {
+          "service": "budget",
+          "question": "need help in budgeting?"
+        },
+        {
+          "service": "legal",
+          "question": "need help in legal works?"
+        }
+      ]
+    }
+  ]
+}

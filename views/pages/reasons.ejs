@@ -1,0 +1,13 @@
+<div class="content d-flex justify-content-center align-items-center">
+  <h1>SAFE YOURSELF FROM HOMELESSNESS</h1>
+  <h3>What is bothering most???</h3>
+  <div class="row">
+    <% reasons.forEach(reason => {%>
+    <div class="col-md-4 category d-flex justify-content-center">
+      <a href="/reasons/<%- reason.shortname %>" class="btn"
+        ><%- reason.icon %><br /><%- reason.name %></a
+      >
+    </div>
+    <% }); %>
+  </div>
+</div>

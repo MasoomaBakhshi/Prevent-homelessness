@@ -1,0 +1,189 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+}
+/* body's styles*/
+body {
+  color: black;
+  font-family: 'Lucida Console', monospace;
+  font-size: 1em;
+  overflow: visible;
+}
+h1 {
+  color: #6610f2;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+}
+h2 {
+  color: black;
+  text-align: center;
+  font-size: 24px;
+}
+/* margin around breadcrums*/
+.breadcrums {
+  margin: 2% 5%;
+}
+a {
+  text-decoration: none;
+  color: #6610f2;
+  font-size: 1em;
+}
+
+nav {
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 2em;
+  text-align: center;
+}
+.access {
+  display: inline;
+  background-color: red;
+  color: #ffffff;
+  padding: 0.3em;
+}
+.font,
+.font-type {
+  display: inline;
+  border: 2px solid #ffffff;
+  padding: 0.3em;
+  margin: 0.3em;
+}
+.font:hover,
+.font-type:hover {
+  background-color: #ffffff;
+  color: black;
+  cursor: pointer;
+}
+.exit {
+  display: inline;
+  background-color: red;
+  color: #ffffff;
+  padding: 0.5em;
+}
+.exit:hover {
+  background-color: white;
+  text-decoration: none;
+  color: red;
+  cursor: pointer;
+}
+ul {
+  width: 100%;
+  margin: auto;
+  padding: 0.3em;
+}
+ul li {
+  list-style-type: none;
+  text-align: center;
+  margin: 0.3em auto;
+}
+.selected {
+  color: red;
+}
+/* styles for index pages*/
+.content {
+  background: #ffffff;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.category {
+  margin: 1em auto;
+  font-size: 1.5em;
+}
+.category i {
+  font-size: 2.5em;
+}
+
+/* styles for messages display div*/
+#alert {
+  color: red;
+  padding-top: 20px;
+}
+
+/* styles for form's elements*/
+
+select {
+  width: 200px;
+  padding: 0.2em;
+  background-color: #ffffff;
+  border: 1px solid red;
+}
+input {
+  width: 300px;
+  padding: 20px;
+  margin: 20px;
+  background-color: #ffffff;
+  border: 2px solid #007bff;
+  color: #6610f2;
+}
+
+.btn {
+  width: 300px;
+  padding: 1em;
+  background-color: #6610f2;
+  color: white;
+}
+.btn:hover,
+.btn:visited {
+  color: white;
+  background-color: #007bff;
+}
+.btn-primary {
+  padding: 0.5em 8em;
+}
+.clearfix {
+  padding: 2.5em;
+}
+/* footer*/
+footer {
+  text-align: center;
+}
+
+/* tabs */
+.container {
+  background-color: silver;
+  padding: 1em;
+}
+.tab-content {
+  padding: 1em;
+}
+.tabscontent {
+  display: block;
+  margin: 1em auto;
+  background-color: white;
+  padding: 1em;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: #6610f2;
+  color: white;
+  border-radius: 0;
+}
+.tab-pane ul li {
+  border-left: 2px solid #6610f2;
+  text-align: left;
+  padding-left: 1em;
+  margin-bottom: 1em;
+}
+@media only screen and (max-width: 1300px) and (min-width: 780px) {
+  .clearfix {
+    padding: 4em;
+  }
+}
+@media only screen and (max-width: 780px) {
+  .clearfix {
+    padding: 6em;
+  }
+}
+/*error page*/
+#main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}

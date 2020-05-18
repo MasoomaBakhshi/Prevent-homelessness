@@ -1,0 +1,11 @@
+<div class="content d-flex justify-content-center align-items-center">
+  <h1>SAFE YOURSELF FROM HOMELESSNESS</h1>
+  <h3>What is bothering most???</h3>
+  <div class="row">
+    <% questions.forEach(quest => {%>
+    <div class="col-md-4 category d-flex justify-content-center">
+      <a href="/services/<%- quest.service %>" class="btn"><%- quest.question %></a>
+    </div>
+    <% }); %>
+  </div>
+</div>

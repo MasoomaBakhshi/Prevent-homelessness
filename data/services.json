@@ -1,0 +1,100 @@
+{
+  "services": [
+    {
+      "name": "line1 CONTENT",
+      "phone": "0000000",
+      "email": "ABC@HOTMAIL.COM",
+      "website": "www.ABC.COM",
+      "summary": "<p>Drawing and painting flowers may seem like a first-year art student's assignment,</p> <ul><li>but Lorenzo Garcia brings depth, shadows, light, form and </li><li>color to new heights with his unique and </li><li>revolutionary technique of painting on canvas with ceramic glaze.</li><li> This session is sure to be a hit with mixed media buffs.</li></ul>",
+      "street": "abcxyz",
+      "postcode": "4100",
+      "state": "QLD",
+      "mode": "lines",
+      "service": "legal"
+    },
+    {
+      "name": "chat CONTENT",
+      "phone": "0000000",
+      "email": "ABC@HOTMAIL.COM",
+      "website": "www.ABC.COM",
+      "summary": "<p>Drawing and painting flowers may seem like a first-year art student's assignment,</p> <ul><li>but Lorenzo Garcia brings depth, shadows, light, form and </li><li>color to new heights with his unique and </li><li>revolutionary technique of painting on canvas with ceramic glaze.</li><li> This session is sure to be a hit with mixed media buffs.</li></ul>",
+      "street": "abcxyz",
+      "postcode": "4100",
+      "state": "QLD",
+      "mode": "chat",
+      "service": "relationship"
+    },
+    {
+      "name": "forum CONTENT",
+      "phone": "0000000",
+      "email": "ABC@HOTMAIL.COM",
+      "website": "www.ABC.COM",
+      "summary": "<p>Drawing and painting flowers may seem like a first-year art student's assignment,</p> <ul><li>but Lorenzo Garcia brings depth, shadows, light, form and </li><li>color to new heights with his unique and </li><li>revolutionary technique of painting on canvas with ceramic glaze.</li><li> This session is sure to be a hit with mixed media buffs.</li></ul>",
+      "street": "abcxyz",
+      "postcode": "4100",
+      "state": "QLD",
+      "mode": "forum",
+      "service": "legal"
+    },
+    {
+      "name": "info",
+      "phone": "0000000",
+      "email": "ABC@HOTMAIL.COM",
+      "website": "www.ABC.COM",
+      "summary": "<p>Drawing and painting flowers may seem like a first-year art student's assignment,</p> <ul><li>but Lorenzo Garcia brings depth, shadows, light, form and </li><li>color to new heights with his unique and </li><li>revolutionary technique of painting on canvas with ceramic glaze.</li><li> This session is sure to be a hit with mixed media buffs.</li></ul>",
+      "street": "abcxyz",
+      "postcode": "4100",
+      "state": "QLD",
+      "mode": "info",
+      "service": "budget"
+    },
+    {
+      "name": "line1 CONTENT",
+      "phone": "0000000",
+      "email": "ABC@HOTMAIL.COM",
+      "website": "www.ABC.COM",
+      "summary": "<p>Drawing and painting flowers may seem like a first-year art student's assignment,</p> <ul><li>but Lorenzo Garcia brings depth, shadows, light, form and </li><li>color to new heights with his unique and </li><li>revolutionary technique of painting on canvas with ceramic glaze.</li><li> This session is sure to be a hit with mixed media buffs.</li></ul>",
+      "street": "abcxyz",
+      "postcode": "4100",
+      "state": "QLD",
+      "mode": "locate",
+      "service": "legal"
+    },
+    {
+      "name": "chat CONTENT",
+      "phone": "0000000",
+      "email": "ABC@HOTMAIL.COM",
+      "website": "www.ABC.COM",
+      "summary": "<p>Drawing and painting flowers may seem like a first-year art student's assignment,</p> <ul><li>but Lorenzo Garcia brings depth, shadows, light, form and </li><li>color to new heights with his unique and </li><li>revolutionary technique of painting on canvas with ceramic glaze.</li><li> This session is sure to be a hit with mixed media buffs.</li></ul>",
+      "street": "abcxyz",
+      "postcode": "4100",
+      "state": "QLD",
+      "mode": "chat",
+      "service": "relationship"
+    },
+    {
+      "name": "forum CONTENT",
+      "phone": "0000000",
+      "email": "ABC@HOTMAIL.COM",
+      "website": "www.ABC.COM",
+      "summary": "<p>Drawing and painting flowers may seem like a first-year art student's assignment,</p> <ul><li>but Lorenzo Garcia brings depth, shadows, light, form and </li><li>color to new heights with his unique and </li><li>revolutionary technique of painting on canvas with ceramic glaze.</li><li> This session is sure to be a hit with mixed media buffs.</li></ul>",
+      "street": "abcxyz",
+      "postcode": "4100",
+      "state": "QLD",
+      "mode": "forum",
+      "service": "relationship"
+    },
+    {
+      "name": "info CONTENT",
+      "phone": "0000000",
+      "email": "ABC@HOTMAIL.COM",
+      "website": "www.ABC.COM",
+      "summary": "<p>Drawing and painting flowers may seem like a first-year art student's assignment,</p> <ul><li>but Lorenzo Garcia brings depth, shadows, light, form and </li><li>color to new heights with his unique and </li><li>revolutionary technique of painting on canvas with ceramic glaze.</li><li> This session is sure to be a hit with mixed media buffs.</li></ul>",
+      "street": "abcxyz",
+      "postcode": "4100",
+      "state": "QLD",
+      "mode": "info",
+      "service": "budget"
+    }
+  ]
+}
