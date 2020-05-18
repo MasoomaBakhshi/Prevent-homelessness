@@ -22,7 +22,6 @@ $('#fontChooser').change(function () {
 ///check for level cookie
 function level() {
   var level = $.cookie('level');
-  console.log(level);
   if (level != null) {
     if (level === 'ok') {
       $('#info-tab').addClass('active').addClass('recomended');
@@ -47,10 +46,61 @@ function level() {
   }
 }
 
+//// function for multiple options and display its weightage field for each option//////
+function createQuestion() {
+  var output = '';
+  output +=
+    '<div class="form-group"><label for="question">Question</label> <input data-bv-stringlength-min="6" data-bv-stringlength-message="The detail must be more than 6 characters long" class="form-control" type="text" name="question" placeholder="Enter Question"></div> <div class="help-block with-errors"></div>';
+  output +=
+    '<div class="form-group"><label for="service">Service Required for Question</label><select name="selectservice"><option value=""></option>';
+  storedServices.forEach(
+    (storedservice) =>
+      (output += '<option value="' + storedservice + '">' + storedservice + '</option>')
+  );
+  output +=
+    '</select><label for="service">If Service is not mentioened above </label><input class="form-control" data-bv-stringlength-min="3" data-bv-stringlength-message="The detail must be more than 3 characters long" type="text" name="inputservice"  placeholder="Enter Service required for Question"></br>';
+  $('#choices').append(output);
+}
+
+///password
+var password = document.getElementById('password'),
+  confirm_password = document.getElementById('password2');
+var changepassword = document.getElementById('changepassword'),
+  changeconfirm_password = document.getElementById('changepassword2');
+if (password) {
+  password.onchange = validatePassword;
+  confirm_password.onkeyup = validatePassword;
+}
+if (changepassword) {
+  changepassword.onchange = validatechangePassword;
+  changeconfirm_password.onkeyup = validatechangePassword;
+}
+
+function validatePassword() {
+  if (password.value != confirm_password.value) {
+    $('#alert').html("Passwords do not match. <i class='fas fa-times-circle'></i>" + '</br>');
+    $('#userbutton').prop('disabled', true);
+  } else {
+    $('#userbutton').prop('disabled', false);
+    $('#alert').html('');
+  }
+}
+function validatechangePassword() {
+  if (changepassword.value != changeconfirm_password.value) {
+    $('#alert-password').html(
+      "Passwords do not match. <i class='fas fa-times-circle'></i>" + '</br>'
+    );
+    $('#passwordbutton').prop('disabled', true);
+  } else {
+    $('#passwordbutton').prop('disabled', false);
+    $('#alert-password').html('');
+  }
+}
+
 ////document on ready
 $(document).ready(function () {
+  //check cookie
   $('#level .col-md-4').click(function () {
-    console.log('clicked');
     var number = $(this).attr('data-number');
     var level = $(this).attr('data-value');
     $('.material-icons').removeClass('Yelselected');
@@ -60,14 +110,23 @@ $(document).ready(function () {
     $(current).find('.caption').addClass('Yelselected');
     document.cookie = 'level=; expires=Thu, 01 Jan 1970 00:00:00 UTC';
     $.cookie('level', level, { expires: 1, path: '/services' });
-    console.log(level);
   });
+  level();
 
+  //reason details start with null
   $('#AddReason').on('hidden.bs.modal', function () {
     $('#choices').html('');
   });
 
-  level();
+  //form validations
+  $('#registrationForm').bootstrapValidator();
+  $('#loginForm').bootstrapValidator();
+  $('#userForm').bootstrapValidator();
+  $('#updateForm').bootstrapValidator();
+  $('#passwordForm').bootstrapValidator();
+  $('#reasonForm').bootstrapValidator();
+  $('#serviceForm').bootstrapValidator();
+
   ////modals
 
   $('.button').click(function () {
@@ -154,16 +213,16 @@ $(document).ready(function () {
       var output = '';
       for (i = 0; i < option; i++) {
         output +=
-          '<div class="form-group"><label for="question">Question </label> <input  onChange="checkbrief(this)" class="form-control" type="text" name="question" required value="' +
+          '<div class="form-group"><label for="question">Question </label> <input  data-bv-stringlength-min="6" data-bv-stringlength-message="The detail must be more than 6 characters long" class="form-control" type="text" name="question" value="' +
           questions[i] +
-          '"></div>';
+          '"></div><div class="help-block with-errors"></div>';
         output +=
           '<div class="form-group"><label for="service">Service Required for Question </label><select name="selectservice">  <option> </option> ';
         storedServices.forEach((storedservice) => {
           output += '<option value="' + storedservice + '">' + storedservice + '</option>';
         });
         output +=
-          '</select><label for="service">If Service is not mentioened above </label><input class="form-control" type="text" name="inputservice"  id="inputservice" placeholder="Enter Service required for Question" value="' +
+          '</select><label for="service">If Service is not mentioened above </label><input class="form-control" data-bv-stringlength-min="3" data-bv-stringlength-message="The detail must be more than 3 characters long" type="text" name="inputservice"  id="inputservice" placeholder="Enter Service required for Question" value="' +
           services[i] +
           '"></br>';
       }

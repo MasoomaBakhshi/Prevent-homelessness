@@ -5,7 +5,6 @@ const ReasonSchema = mongoose.Schema(
     reason: {
       type: String,
       required: true,
-      trim: true,
       index: { unique: true },
       minlength: 3,
     },
@@ -19,17 +18,14 @@ const ReasonSchema = mongoose.Schema(
     },
     symbol: {
       type: String,
-      trim: true,
     },
     questions: [
       {
         question: {
           type: String,
-          trim: true,
         },
         service: {
           type: String,
-          trim: true,
         },
       },
     ],

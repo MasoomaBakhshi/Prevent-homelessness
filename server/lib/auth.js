@@ -7,11 +7,11 @@ passport.use(
     try {
       const user = await UserModel.findOne({ email: username }).exec();
       if (!user) {
-        return done(null, false, { message: 'Invalid username' });
+        return done(null, false, { message: 'Invalid username or password!' });
       }
       const passwordOK = await user.comparePassword(password);
       if (!passwordOK) {
-        return done(null, false, { message: 'Invalid password' });
+        return done(null, false, { message: 'Invalid username or password!' });
       }
       return done(null, user, { message: 'Welcome' + user.email });
     } catch (err) {

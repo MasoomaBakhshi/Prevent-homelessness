@@ -20,10 +20,10 @@
           method="POST"
           id="updateForm"
           action=""
-          onsubmit="return checksubmit()"
           enctype="multipart/form-data"
+          role="form"
+          data-toggle="validator"
         >
-          <div class="alert-issues alert alert-danger"></div>
           <input type="hidden" id="updatecreateduser" name="createduser" value="<%- user.id %>" />
           <input type="hidden" name="updateduser" value="<%- user.id %>" />
 
@@ -31,16 +31,24 @@
             <label for="username">Name</label>
             <input
               id="updateusername"
-              onChange="checkname(this)"
               type="name"
               class="form-control text-input"
               name="username"
               placeholder="Enter your Name"
+              data-bv-notempty="true"
+              data-bv-notempty-message="Name is required and cannot be empty. <i class='fas fa-times-circle'></i>"
+              data-bv-stringlength="true"
+              data-bv-stringlength-min="3"
+              data-bv-stringlength-max="30"
+              data-bv-stringlength-message="Name must be more than 3 and less than 30 characters long. <i class='fas fa-times-circle'></i>"
+              data-bv-regexp="true"
+              data-bv-regexp-regexp="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$"
+              data-bv-regexp-message="Name should be characters. <i class='fas fa-times-circle'></i>"
             />
           </div>
           <div class="form-group">
             <label for="role">Role</label><br />
-            <select id="updaterole" name="role" class="text-input" onChange="checkrole(this)">
+            <select id="updaterole" name="role" class="text-input" required>
               <option></option>
               <option>Developer</option>
               <option>Content Writer</option>
@@ -58,19 +66,15 @@
               name="email"
               aria-describedby="emailHelp"
               placeholder="Enter Email"
+              data-bv-notempty="true"
+              data-bv-notempty-message="The email address is required and cannot be empty. <i class='fas fa-times-circle'></i>"
+              data-bv-emailaddress="true"
+              data-bv-emailaddress-message="The email address is not a valid. <i class='fas fa-times-circle'></i>"
             />
           </div>
           <div class="form-group">
             <label for="image">Profile Image</label>
-            <input
-              type="file"
-              value=""
-              onChange="checkimage(this)"
-              class="form-control"
-              name="image"
-              id="updateimage"
-              placeholder="Image for profile"
-            />
+            <input type="file" name="image" />
           </div>
           <button type="submit" class="btn">Submit</button>
         </form>

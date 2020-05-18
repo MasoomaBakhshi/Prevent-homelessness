@@ -10,7 +10,7 @@ module.exports = (params) => {
       const services = await dbquries.getServicesbyReason(request.params.service);
       return response.render('layout', {
         pageTitle: 'Services',
-        template: 'Services',
+        template: 'services',
         services,
       });
     } catch (err) {

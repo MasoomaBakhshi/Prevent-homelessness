@@ -20,7 +20,7 @@ module.exports = (params) => {
 
   router.get('/:reason', async (request, response, next) => {
     try {
-      if (request.params.reason == 'all') {
+      if (request.params.reason === 'all') {
         try {
           const reason = await dbquries.getReasons();
           return response.render('layout', {
@@ -31,13 +31,18 @@ module.exports = (params) => {
         } catch (err) {
           return next(err);
         }
+      } else {
+        try {
+          const reason = await dbquries.getReason(request.params.reason);
+          return response.render('layout', {
+            pageTitle: 'More Detail',
+            template: 'details',
+            reason,
+          });
+        } catch (err) {
+          return next(err);
+        }
       }
-      const reason = await dbquries.getReason(request.params.reason);
-      return response.render('layout', {
-        pageTitle: 'More Detail',
-        template: 'details',
-        reason,
-      });
     } catch (err) {
       return next(err);
     }

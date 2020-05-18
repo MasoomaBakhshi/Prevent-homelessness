@@ -6,10 +6,11 @@
   <form
     method="POST"
     action="/users/registration"
-    onsubmit="return checksubmit()"
+    id="registrationForm"
     enctype="multipart/form-data"
+    role="form"
+    data-toggle="validator"
   >
-    <div class="alert-issues alert alert-danger"></div>
     <% if(error) { %>
     <div class="alert alert-danger">
       <%- error %>
@@ -23,24 +24,35 @@
       <label for="username">Name</label>
       <input
         id="username"
-        onChange="checkname(this)"
         type="username"
         class="form-control text-input"
         name="username"
         placeholder="Enter your Name"
+        data-bv-notempty="true"
+        data-bv-notempty-message="'Name is required and cannot be empty. <i class='fas fa-times-circle'></i>"
+        data-bv-stringlength="true"
+        data-bv-stringlength-min="3"
+        data-bv-stringlength-max="30"
+        data-bv-stringlength-message="'Name must be more than 3 and less than 30 characters long. <i class='fas fa-times-circle'></i>"
+        data-bv-regexp="true"
+        data-bv-regexp-regexp="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$"
+        data-bv-regexp-message="'Name should be characters. <i class='fas fa-times-circle'></i>"
       />
     </div>
-    <input type="hidden" name="role" value="Member" />
+    <input type="hidden" name="role" value="Member" required />
     <div class="form-group">
       <label for="email">Email address</label>
       <input
         id="email"
         type="email"
-        onChange="checkemail(this)"
         class="form-control text-input"
         name="email"
         aria-describedby="emailHelp"
         placeholder="Enter Email"
+        data-bv-notempty="true"
+        data-bv-notempty-message="The email address is required and cannot be empty. <i class='fas fa-times-circle'></i>"
+        data-bv-emailaddress="true"
+        data-bv-emailaddress-message="The email address is not a valid. <i class='fas fa-times-circle'></i>"
       />
     </div>
     <div class="form-group">
@@ -48,34 +60,31 @@
       <input
         id="password"
         type="password"
-        onChange="checkpassword(this)"
         class="form-control text-input"
         name="password"
         placeholder="Enter Password"
+        data-bv-notempty="true"
+        data-bv-notempty-message="The password is required and cannot be empty. <i class='fas fa-times-circle'></i>"
+        data-bv-stringlength="true"
+        data-bv-stringlength-min="8"
+        data-bv-stringlength-message="The password must have at least 8 characters. <i class='fas fa-times-circle'></i>"
       />
     </div>
     <div class="form-group">
       <label for="password2">Retype-Password</label>
       <input
         type="password"
-        onChange="checkrepassword(this)"
         class="form-control text-input"
         name="password2"
         id="password2"
         placeholder="Retype-Password"
       />
     </div>
+    <div id="alert"></div>
     <div class="form-group">
       <label for="image">Profile Image</label>
-      <input
-        type="file"
-        onChange="checkimage(this)"
-        class="form-control"
-        name="image"
-        id="image"
-        placeholder="Image for profile"
-      />
+      <input type="file" name="image" />
     </div>
-    <button type="submit" class="btn">Submit</button>
+    <button type="submit" class="btn" id="userbutton">Submit</button>
   </form>
 </div>

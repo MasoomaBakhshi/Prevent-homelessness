@@ -2,7 +2,7 @@
 module.exports = {
   apps: [
     {
-      name: 'meetup',
+      name: 'Prevent-Homelessness',
       script: 'bin/www',
       env_production: {
         NODE_ENV: 'production',
@@ -12,9 +12,9 @@ module.exports = {
   deploy: {
     production: {
       user: 'nodejs',
-      host: '<CHANGE_TO_YOUR_HOST>',
+      host: 'https://prevent-homelessness.herokuapp.com/',
       ref: 'origin/master',
-      repo: '<CHANGE_TO_YOUR_GITHUB_REPO>',
+      repo: 'https://github.com/MasoomaBakhshi/Prevent-homelessness.git',
 
       // Make sure this directory exists on your server or change this entry to match your directory structure
       path: '/home/nodejs/deploy',

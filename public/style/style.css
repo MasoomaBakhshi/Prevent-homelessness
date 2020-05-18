@@ -117,13 +117,12 @@ ul li {
 .Yelselected {
   color: gold;
 }
-.alert {
-  width: 400px;
-  margin: auto;
-}
-.alert-issues {
-  display: none;
-  text-align: left;
+.help-block,
+#alert,
+#alert-password {
+  color: darkred;
+  font-size: 16px;
+  font-weight: 500;
 }
 .alert-success,
 .alert-danger {
@@ -225,7 +224,6 @@ select {
   width: 400px;
   color: #fff;
   cursor: pointer;
-  padding-bottom: 36px;
 }
 .btn {
   width: 400px;
@@ -430,6 +428,55 @@ td span {
 @media only screen and (max-width: 767px) {
   .admin {
     padding-top: 12em;
+  }
+  .btn {
+    width: 100%;
+  }
+  .btn-primary {
+    padding: 0.5em 3em;
+    text-align: center;
+    border-radius: 0.3em;
+  }
+}
+/*web portal for test********/
+@media only screen and (max-width: 500px) {
+  .fixed-top {
+    display: none;
+  }
+  .clearfix2,
+  .clearfix {
+    padding: 0px;
+  }
+  * {
+    font-size: 1em;
+  }
+  h1 {
+    font-size: 1.5em;
+  }
+  h2 {
+    font-size: 1.3em;
+  }
+  h3 {
+    font-size: 1em;
+  }
+  .reasons {
+    padding: 20px 0px;
+    min-width: 200px;
+    margin: 10px auto;
+  }
+  .reasons span {
+    font-size: 1em;
+  }
+  .symbol {
+    font-size: 1.5em;
+  }
+  .questions {
+    padding: 15px 0px;
+    min-width: 200px;
+    font-size: 1em;
+  }
+  .tab-content {
+    padding: 0.5em;
   }
 }
 /*error page*/

@@ -23,6 +23,13 @@ function merge_array(array1, array2) {
   return result_array;
 }
 
+function isEmpty(obj) {
+  for (var key in obj) {
+    if (obj[key] != '') return false;
+  }
+  return true;
+}
+
 function removeDups(array) {
   let unique = {};
   array.forEach(function (i) {
@@ -126,17 +133,32 @@ class dbQuries {
   }
   //add
   async addReason(reason) {
-    var options = reason.question.length;
     var questions = [];
-    for (var i = 0; i < options; i++) {
-      var obj = {};
-      obj['question'] = reason.question[i];
-      if (reason.selectservice[i]) {
-        obj['service'] = reason.selectservice[i];
-      } else {
-        obj['service'] = reason.inputservice[i];
+    if (Array.isArray(reason.question)) {
+      var options = reason.question.length;
+      for (var i = 0; i < options; i++) {
+        var obj = {};
+        obj['question'] = reason.question[i];
+        if (reason.selectservice[i]) {
+          obj['service'] = reason.selectservice[i];
+        } else {
+          obj['service'] = reason.inputservice[i];
+        }
+        if (!isEmpty(obj)) {
+          questions.push(obj);
+        }
       }
-      questions.push(obj);
+    } else {
+      var obj = {};
+      obj['question'] = reason.question;
+      if (reason.selectservice) {
+        obj['service'] = reason.selectservice;
+      } else {
+        obj['service'] = reason.inputservice;
+      }
+      if (!isEmpty(obj)) {
+        questions.push(obj);
+      }
     }
     const addreason = new ReasonModel({
       reason: reason.reason,
@@ -151,17 +173,32 @@ class dbQuries {
   //update reason
   async updateReason(reason, id) {
     var id = id;
-    var options = reason.question.length;
     var questions = [];
-    for (var i = 0; i < options; i++) {
-      var obj = {};
-      obj['question'] = reason.question[i];
-      if (reason.selectservice[i]) {
-        obj['service'] = reason.selectservice[i];
-      } else {
-        obj['service'] = reason.inputservice[i];
+    if (Array.isArray(reason.question)) {
+      var options = reason.question.length;
+      for (var i = 0; i < options; i++) {
+        var obj = {};
+        obj['question'] = reason.question[i];
+        if (reason.selectservice[i]) {
+          obj['service'] = reason.selectservice[i];
+        } else {
+          obj['service'] = reason.inputservice[i];
+        }
+        if (!isEmpty(obj)) {
+          questions.push(obj);
+        }
       }
-      questions.push(obj);
+    } else {
+      var obj = {};
+      obj['question'] = reason.question;
+      if (reason.selectservice) {
+        obj['service'] = reason.selectservice;
+      } else {
+        obj['service'] = reason.inputservice;
+      }
+      if (!isEmpty(obj)) {
+        questions.push(obj);
+      }
     }
     return await ReasonModel.findOneAndUpdate(
       { _id: id },

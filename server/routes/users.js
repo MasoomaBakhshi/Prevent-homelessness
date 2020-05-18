@@ -81,8 +81,8 @@ module.exports = (params) => {
         request.session.error = 'Sorry, you are not registered due to unknown reason';
         return response.redirect('/users');
       } catch (err) {
-        if (req.file && req.file.storedFilename) {
-          await images.delete(req.file.storedFilename);
+        if (request.file && request.file.storedFilename) {
+          await images.delete(request.file.storedFilename);
         }
         return next(err);
       }
@@ -161,8 +161,8 @@ module.exports = (params) => {
           'Sorry, New user ' + request.body.email + ' is not added due to unknown reason';
         return response.redirect('/users');
       } catch (err) {
-        if (req.file && req.file.storedFilename) {
-          await images.delete(req.file.storedFilename);
+        if (request.file && request.file.storedFilename) {
+          await images.delete(request.file.storedFilename);
         }
         return next(err);
       }
@@ -208,7 +208,7 @@ module.exports = (params) => {
     try {
       const update = await dbquries.updatePassword(request.body, request.params.id);
       if (update) {
-        request.session.success = 'Password of ' + request.params.id + ' is updated.';
+        request.session.success = 'Password of User with ID# ' + request.params.id + ' is updated.';
         return response.redirect('/users');
       }
       request.session.error =
@@ -245,6 +245,13 @@ module.exports = (params) => {
       const found = await dbquries.getReason(request.body.reason);
       if (found) {
         request.session.error = 'Sorry, Reason ' + request.body.reason + ' is already in database.';
+        return response.redirect('/users');
+      }
+      if (!request.body.question) {
+        request.session.error =
+          'There should be atleast one question and service for ' +
+          request.body.reason +
+          ' to be stored in database.';
         return response.redirect('/users');
       }
       const savedReason = await dbquries.addReason(request.body);
@@ -319,8 +326,8 @@ module.exports = (params) => {
           ' is not entered due to unknown reason';
         return response.redirect('/users');
       } catch (err) {
-        if (req.file && req.file.storedFilename) {
-          await images.delete(req.file.storedFilename);
+        if (request.file && request.file.storedFilename) {
+          await images.delete(request.file.storedFilename);
         }
         return next(err);
       }
@@ -374,8 +381,8 @@ module.exports = (params) => {
           'Sorry Organization ' + request.body.organization + ' is  not update.';
         return response.redirect('/users');
       } catch (err) {
-        if (req.file && req.file.storedFilename) {
-          await images.delete(req.file.storedFilename);
+        if (request.file && request.file.storedFilename) {
+          await images.delete(request.file.storedFilename);
         }
         if (err.code == '11000') {
           request.session.error =

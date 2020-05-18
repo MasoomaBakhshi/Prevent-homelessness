@@ -91,10 +91,12 @@
         <div class="info">
           <strong><i class="fas fa-info-circle"></i> Website: </strong><a href="<%=serve.website%>"><%= serve.website %></a>
         </div>
+        <% if (serve.address.street){%>
         <div class="info">
           <strong><i class="fas fa-map-marked-alt"></i> Address: </strong><a href="https://www.google.com/maps/place/<%= serve.address.street %>+<%= serve.address.subrub
             %><%= serve.address.state%>+<%= serve.address.postcode %>" ><%= serve.address.street %> <%=serve.address.subrub %> <%=serve.address.state%> <%= serve.address.postcode %></a>
         </div>
+        <%}%>
         <div class="info">
           <strong><i class="fas fa-phone"></i> Phone: </strong><a href="tel:<%- serve.phone %>" ><%- serve.phone %></a>
         </div>
@@ -112,23 +114,22 @@
           <h2><%- serve.organization %></h2>
           <strong class="note"><%= serve.note %></strong>
           <p><%- serve.body %></p>
-          <div class="info">
-            <strong><i class="fas fa-info-circle"></i> Website: </strong><a href="<%=serve.website%>"><%= serve.website %></a>
-          </div>
+          <% if (serve.address.street){%>
           <div class="info">
             <strong><i class="fas fa-map-marked-alt"></i> Address: </strong><a href="https://www.google.com/maps/place/<%= serve.address.street %>+<%= serve.address.subrub
               %><%= serve.address.state%>+<%= serve.address.postcode %>" ><%= serve.address.street %> <%=serve.address.subrub %> <%=serve.address.state%> <%= serve.address.postcode %></a>
           </div>
+          <%}%>
+          <% if (serve.phone){%>
           <div class="info">
             <strong><i class="fas fa-phone" aria-hidden="true"></i> Phone: </strong><a href="tel:<%- serve.phone %>" ><%- serve.phone %></a>
           </div>
+          <%}%>
           <a
-          href="https://www.google.com/maps/place/<%- serve.address.street %>+<%- serve.address.subrub %>+<%- serve.address.state
-          %>+<%- serve.address.postcode %>"
+          href="<%- serve.website %>"
           class="btn-primary btn-block"
           target="_blank"
-          >Locate : <%- serve.address.street %> <%- serve.address.subrub %> <%-
-          serve.address.state %> <%- serve.address.postcode %></a
+          >Locate </a
         >
       </div>
       <% }}) %>
@@ -142,16 +143,6 @@
           <h2><%- serve.organization %></h2>
           <strong class="note"><%= serve.note %></strong>
           <p><%- serve.body %></p>
-          <div class="info">
-            <strong><i class="fas fa-info-circle"></i> Website: </strong><a href="<%=serve.website%>"><%= serve.website %></a>
-          </div>
-          <div class="info">
-            <strong><i class="fas fa-map-marked-alt"></i> Address: </strong><a href="https://www.google.com/maps/place/<%= serve.address.street %>+<%= serve.address.subrub
-              %><%= serve.address.state%>+<%= serve.address.postcode %>" ><%= serve.address.street %> <%=serve.address.subrub %> <%=serve.address.state%> <%= serve.address.postcode %></a>
-          </div>
-          <div class="info">
-            <strong><i class="fas fa-phone" aria-hidden="true"></i> Phone: </strong><a href="tel:<%- serve.phone %>" ><%- serve.phone %></a>
-          </div>
         <a href="<%- serve.website %>" class="btn-primary btn-block" target="_blank"
           > Chat </a
         >
@@ -167,16 +158,6 @@
           <h2><%- serve.organization %></h2>
           <strong class="note"><%= serve.note %></strong>
           <p><%- serve.body %></p>
-          <div class="info">
-            <strong><i class="fas fa-info-circle"></i> Website: </strong><a href="<%=serve.website%>"><%= serve.website %></a>
-          </div>
-          <div class="info">
-            <strong><i class="fas fa-map-marked-alt"></i> Address: </strong><a href="https://www.google.com/maps/place/<%= serve.address.street %>+<%= serve.address.subrub
-              %><%= serve.address.state%>+<%= serve.address.postcode %>" ><%= serve.address.street %> <%=serve.address.subrub %> <%=serve.address.state%> <%= serve.address.postcode %></a>
-          </div>
-          <div class="info">
-            <strong><i class="fas fa-phone" aria-hidden="true"></i> Phone: </strong><a href="tel:<%- serve.phone %>" ><%- serve.phone %></a>
-          </div>
         <a href="<%- serve.website %>" class="btn-primary btn-block" target="_blank"
           > More Info</a
         >
@@ -192,16 +173,6 @@
           <h2><%- serve.organization %></h2>
           <strong class="note"><%= serve.note %></strong>
           <p><%- serve.body %></p>
-          <div class="info">
-            <strong><i class="fas fa-info-circle"></i> Website: </strong><a href="<%=serve.website%>"><%= serve.website %></a>
-          </div>
-          <div class="info">
-            <strong><i class="fas fa-map-marked-alt"></i> Address: </strong><a href="https://www.google.com/maps/place/<%= serve.address.street %>+<%= serve.address.subrub
-              %><%= serve.address.state%>+<%= serve.address.postcode %>" ><%= serve.address.street %> <%=serve.address.subrub %> <%=serve.address.state%> <%= serve.address.postcode %></a>
-          </div>
-          <div class="info">
-            <strong><i class="fas fa-phone" aria-hidden="true"></i> Phone: </strong><a href="tel:<%- serve.phone %>" ><%- serve.phone %></a>
-          </div>
         <a href="<%- serve.website %>" class="btn-primary btn-block" target="_blank">
           Forum </a>
       </div>
@@ -216,16 +187,16 @@
           <h2><%- serve.organization %></h2>
           <strong class="note"><%= serve.note %></strong>
           <p><%- serve.body %></p>
-          <div class="info">
-            <strong><i class="fas fa-info-circle"></i> Website: </strong><a href="<%=serve.website%>"><%= serve.website %></a>
-          </div>
+          <% if (serve.address.street){%>
           <div class="info">
             <strong><i class="fas fa-map-marked-alt"></i> Address: </strong><a href="https://www.google.com/maps/place/<%= serve.address.street %>+<%= serve.address.subrub
               %><%= serve.address.state%>+<%= serve.address.postcode %>" ><%= serve.address.street %> <%=serve.address.subrub %> <%=serve.address.state%> <%= serve.address.postcode %></a>
           </div>
+        <%} if (serve.phone){%>
           <div class="info">
             <strong><i class="fas fa-phone" aria-hidden="true"></i> Phone: </strong><a href="tel:<%- serve.phone %>" ><%- serve.phone %></a>
           </div>
+          <%}%>
         <a href="<%- serve.website %>" class="btn-primary btn-block" target="_blank"
           > Visit '<%=serve.website%>'</a
         >
