@@ -1,7 +1,7 @@
 {
   "name": "prevent-homelessness",
   "version": "1.0.0",
-  "description": "Take few easy steps to access the most required services to prevent yourself from homelessness.",
+  "description": "Take few easy steps to access your required services to prevent homelessness.",
   "main": "index.js",
   "scripts": {
     "start": "node bin/www | bunyan",
