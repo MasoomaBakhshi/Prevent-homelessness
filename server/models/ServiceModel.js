@@ -21,18 +21,13 @@ const ServiceSchema = mongoose.Schema(
       type: String,
     },
     address: {
-      street: {
-        type: String,
-      },
-      subrub: {
-        type: String,
-      },
-      postcode: {
-        type: String,
-      },
-      state: {
-        type: String,
-      },
+      type: String,
+    },
+    chat: {
+      type: String,
+    },
+    forum: {
+      type: String,
     },
     mode: {
       type: Array,

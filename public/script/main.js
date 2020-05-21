@@ -246,10 +246,9 @@ $(document).ready(function () {
       var website = $(button).data('website');
       var body = $(button).data('body');
       var note = $(button).data('note');
-      var street = $(button).data('street');
-      var subrub = $(button).data('subrub');
-      var postcode = $(button).data('postcode');
-      var state = $(button).data('state');
+      var address = $(button).data('address');
+      var chat = $(button).data('chat');
+      var forum = $(button).data('forum');
       var mode = $(button).data('mode');
       var services = $(button).data('services');
       mode = mode.split(',');
@@ -262,10 +261,9 @@ $(document).ready(function () {
       $('#phone').val(phone);
       $('#body').val(body);
       $('#note').val(note);
-      $('#street').val(street);
-      $('#subrub').val(subrub);
-      $('#state').val(state);
-      $('#postcode').val(postcode);
+      $('#address').val(address);
+      $('#chat').val(chat);
+      $('#forum').val(forum);
       $('#website').val(website);
       $('#mode').val(mode);
       $('#moreservices').val(services);

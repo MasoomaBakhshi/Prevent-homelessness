@@ -260,7 +260,9 @@ module.exports = (params) => {
         return response.redirect('/users');
       }
       request.session.error =
-        'Sorry, Reason ' + request.body.reason + ' is not added due to unknown reason';
+        'Sorry, Reason ' +
+        request.body.reason +
+        ' is not added due to unknown reason.  Please try again.';
       return response.redirect('/users');
     } catch (err) {
       return next(err);
@@ -276,7 +278,9 @@ module.exports = (params) => {
         return response.redirect('/users');
       }
       request.session.error =
-        'Sorry, Reason ' + request.body.reason + ' is not updated due to unknown reason';
+        'Sorry, Reason ' +
+        request.body.reason +
+        ' is not updated due to unknown reason.  Please try again.';
       return response.redirect('/users');
     } catch (err) {
       if (err.code == '11000') {
@@ -323,7 +327,7 @@ module.exports = (params) => {
         request.session.error =
           'Sorry, Organization ' +
           request.body.organization +
-          ' is not entered due to unknown reason';
+          ' is not entered due to unknown reason. Please try again.';
         return response.redirect('/users');
       } catch (err) {
         if (request.file && request.file.storedFilename) {
@@ -378,7 +382,7 @@ module.exports = (params) => {
           return response.redirect('/users');
         }
         request.session.error =
-          'Sorry Organization ' + request.body.organization + ' is  not update.';
+          'Sorry Organization ' + request.body.organization + ' is  not update. Please try again.';
         return response.redirect('/users');
       } catch (err) {
         if (request.file && request.file.storedFilename) {
@@ -393,6 +397,7 @@ module.exports = (params) => {
       }
     }
   );
+
   // logout
   router.get('/logout', (request, response) => {
     request.logout();

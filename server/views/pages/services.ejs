@@ -1,7 +1,31 @@
 <div class="clearfix"></div>
 <h1>SAFE YOURSELF FROM BEING HOMELESSNESS</h1>
 <h2>Services which could help you in this situation</h2>
+<a href="/" class="home float-left" title="Home Page">
+  Home Page <i class="fas fa-home" aria-hidden="true"></i></a
+><br />
 <p class="recomend">Based on your situation, We recomend the <strong class="selected">red highlited</strong> service but you can go with any other services which is more feasible to you.</p>
+<div class="row">
+<div class="accessible col-md-5">
+  <h2>FREE TRANSLATING AND INTERPRETING SERVICE (TIS)</h2>
+  <p>A free interpreting service is available for people who do not speak English.</p>
+    <ul>To access this service please:
+    <li> Call TIS on <a href="tel:131450"><i class="fas fa-phone" aria-hidden="true"></i
+      > 131 450</a> and ask to connect to required service provider in the language required.</li>
+    <li>TIS will call to service provider on behalf of the caller.</li>
+    </ul>
+</div>
+<div class="accessible col-md-5">
+  <h2>NATIONAL RELAY SERVICE (NRS)</h2>
+  <ul>If you are deaf, or have a hearing impairment or speech impairment, contact through the National Relay Service:
+    <li>TTY (teletypewriter) users phone <a href="tel:133677"><i class="fas fa-phone" aria-hidden="true"></i
+      > 133 677</a> then ask for required service provider's phone number.</li> 
+    <li>Speak and Listen users phone <a href="tel:1300555727"><i class="fas fa-phone" aria-hidden="true"></i
+      > 1300 555 727</a> then ask for required service provider phone number.</li>
+    <li>Internet relay users connect to the <a href="https://nrschat.nrscall.gov.au/nrs/internetrelay" target="_blank"><i class="fas fa-info-circle" aria-hidden="true"></i
+      > NRS</a> then ask for required service provider phone number.</li>    
+</div>
+</div>
 <div class="container service-div" id="services" onload="checkLevel();" >
   <ul class="nav nav-pills nav-justified" id="pills-tab" role="tablist">
     <li class="nav-item">
@@ -68,7 +92,7 @@
         class="nav-link"
         id="services-tab"
         data-toggle="tab"
-        href="#services"
+        href="#comunity"
         role="tab"
         aria-controls="services"
         aria-selected="false"
@@ -91,12 +115,6 @@
         <div class="info">
           <strong><i class="fas fa-info-circle"></i> Website: </strong><a href="<%=serve.website%>"><%= serve.website %></a>
         </div>
-        <% if (serve.address.street){%>
-        <div class="info">
-          <strong><i class="fas fa-map-marked-alt"></i> Address: </strong><a href="https://www.google.com/maps/place/<%= serve.address.street %>+<%= serve.address.subrub
-            %><%= serve.address.state%>+<%= serve.address.postcode %>" ><%= serve.address.street %> <%=serve.address.subrub %> <%=serve.address.state%> <%= serve.address.postcode %></a>
-        </div>
-        <%}%>
         <div class="info">
           <strong><i class="fas fa-phone"></i> Phone: </strong><a href="tel:<%- serve.phone %>" ><%- serve.phone %></a>
         </div>
@@ -114,19 +132,13 @@
           <h2><%- serve.organization %></h2>
           <strong class="note"><%= serve.note %></strong>
           <p><%- serve.body %></p>
-          <% if (serve.address.street){%>
-          <div class="info">
-            <strong><i class="fas fa-map-marked-alt"></i> Address: </strong><a href="https://www.google.com/maps/place/<%= serve.address.street %>+<%= serve.address.subrub
-              %><%= serve.address.state%>+<%= serve.address.postcode %>" ><%= serve.address.street %> <%=serve.address.subrub %> <%=serve.address.state%> <%= serve.address.postcode %></a>
-          </div>
-          <%}%>
           <% if (serve.phone){%>
           <div class="info">
             <strong><i class="fas fa-phone" aria-hidden="true"></i> Phone: </strong><a href="tel:<%- serve.phone %>" ><%- serve.phone %></a>
           </div>
           <%}%>
           <a
-          href="<%- serve.website %>"
+          href="<%- serve.address %>"
           class="btn-primary btn-block"
           target="_blank"
           >Locate </a
@@ -143,7 +155,12 @@
           <h2><%- serve.organization %></h2>
           <strong class="note"><%= serve.note %></strong>
           <p><%- serve.body %></p>
-        <a href="<%- serve.website %>" class="btn-primary btn-block" target="_blank"
+          <% if (serve.phone){%>
+          <div class="info">
+            <strong><i class="fas fa-phone" aria-hidden="true"></i> Phone: </strong><a href="tel:<%- serve.phone %>" ><%- serve.phone %></a>
+          </div>
+          <%}%>
+        <a href="<%- serve.chat %>" class="btn-primary btn-block" target="_blank"
           > Chat </a
         >
       </div>
@@ -173,12 +190,17 @@
           <h2><%- serve.organization %></h2>
           <strong class="note"><%= serve.note %></strong>
           <p><%- serve.body %></p>
-        <a href="<%- serve.website %>" class="btn-primary btn-block" target="_blank">
+          <% if (serve.phone){%>
+          <div class="info">
+            <strong><i class="fas fa-phone" aria-hidden="true"></i> Phone: </strong><a href="tel:<%- serve.phone %>" ><%- serve.phone %></a>
+          </div>
+          <%}%>
+        <a href="<%- serve.forum %>" class="btn-primary btn-block" target="_blank">
           Forum </a>
       </div>
       <% } })%>
     </div>
-    <div class="tab-pane fade" id="services" role="tabpanel" aria-labelledby="services-tab">
+    <div class="tab-pane fade" id="comunity" role="tabpanel" aria-labelledby="services-tab">
       <% services.forEach(serve => { if (serve.mode.includes('comunity')) {%>
         <div class="tabscontent">
           <% if(serve.image){%>          
@@ -187,10 +209,9 @@
           <h2><%- serve.organization %></h2>
           <strong class="note"><%= serve.note %></strong>
           <p><%- serve.body %></p>
-          <% if (serve.address.street){%>
+          <% if (serve.address){%>
           <div class="info">
-            <strong><i class="fas fa-map-marked-alt"></i> Address: </strong><a href="https://www.google.com/maps/place/<%= serve.address.street %>+<%= serve.address.subrub
-              %><%= serve.address.state%>+<%= serve.address.postcode %>" ><%= serve.address.street %> <%=serve.address.subrub %> <%=serve.address.state%> <%= serve.address.postcode %></a>
+            <strong><i class="fas fa-map-marked-alt"></i> Address: </strong><a href="<%= serve.address %>" target="_blank" >Find Office near you</a>
           </div>
         <%} if (serve.phone){%>
           <div class="info">
@@ -198,7 +219,7 @@
           </div>
           <%}%>
         <a href="<%- serve.website %>" class="btn-primary btn-block" target="_blank"
-          > Visit '<%=serve.website%>'</a
+          > More Info </a
         >
       </div>
       <% }})%>

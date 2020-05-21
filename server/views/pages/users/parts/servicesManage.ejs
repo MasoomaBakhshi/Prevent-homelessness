@@ -17,8 +17,6 @@
           <th>Organization Name</th>
           <th>Services</th>
           <th>Phone</th>
-          <th>Website</th>
-          <th>Address</th>
           <th>Mode</th>
           <th>Operations</th>
         </tr>
@@ -32,11 +30,6 @@
           <td><%- service.organization %></td>
           <td><%- service.services %></td>
           <td><%- service.phone %></td>
-          <td><%- service.website %></td>
-          <td>
-            <%- service.address.street %> <%- service.address.subrub %> <%- service.address.postcode
-            %>
-          </td>
           <td><%- service.mode %></td>
           <td>
             <span
@@ -47,13 +40,12 @@
               data-phone="<%- service.phone %>"
               data-website="<%- service.website %>"
               data-mode="<%- service.mode %>"
-              data-body="<%- service.body %>"
+              data-body='<%- service.body %>'
               data-services="<%- service.services %>"
               data-note="<%- service.note %>"
-              data-street="<%- service.address.street %>"
-              data-subrub="<%- service.address.subrub %>"
-              data-postcode="<%- service.address.postcode %>"
-              data-state="<%- service.address.state %>"
+              data-address="<%- service.address %>"
+              data-chat="<%- service.chat %>"
+              data-forum="<%- service.forum %>"
               class="AddService"
               data-toggle="modal"
               data-target="#AddService"

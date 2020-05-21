@@ -19,7 +19,8 @@ module.exports = {
       // Make sure this directory exists on your server or change this entry to match your directory structure
       path: '/home/nodejs/deploy',
 
-      'post-deploy': 'cp ../.env ./ && npm install && pm2 startOrRestart ecosystem.config.js --env production',
+      'post-deploy':
+        'cp ../.env ./ && npm install && pm2 startOrRestart ecosystem.config.js --env production',
     },
   },
 };

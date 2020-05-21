@@ -260,12 +260,9 @@ class dbQuries {
       services: services,
       website: service.body.website,
       phone: service.body.phone,
-      address: {
-        street: service.body.street,
-        subrub: service.body.subrub,
-        postcode: service.body.postcode,
-        state: service.body.state,
-      },
+      address: service.body.address,
+      chat: service.body.chat,
+      forum: service.body.forum,
       mode: service.body.mode,
       body: service.body.body,
       note: service.body.note,
@@ -300,12 +297,9 @@ class dbQuries {
         services: services,
         website: service.body.website,
         phone: service.body.phone,
-        address: {
-          street: service.body.street,
-          subrub: service.body.subrub,
-          postcode: service.body.postcode,
-          state: service.body.state,
-        },
+        address: service.body.address,
+        chat: service.body.chat,
+        forum: service.body.forum,
         mode: service.body.mode,
         body: service.body.body,
         note: service.body.note,
@@ -327,6 +321,9 @@ class dbQuries {
       return true;
     }
   }
+  ////save many
+  ////add
+
   //delete
   async deleteService(id) {
     const service = await ServiceModel.findOne({ _id: id }).exec();

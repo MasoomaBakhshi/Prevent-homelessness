@@ -10,7 +10,8 @@ body {
   color: black;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1em;
-  overflow: visible;
+  background-color: whitesmoke;
+  overflow-x: hidden;
 }
 h1 {
   color: green;
@@ -35,15 +36,8 @@ h3 {
   font-size: 23px;
   margin-bottom: 0.8em;
 }
-a {
-  text-decoration: none;
-}
 a:hover {
   text-decoration: none;
-}
-/* margin around breadcrums*/
-.breadcrums {
-  margin: 2% 5%;
 }
 a {
   text-decoration: none;
@@ -54,14 +48,14 @@ a {
 nav {
   width: 100%;
   background-color: black;
-  color: white;
+  color: whitesmoke;
   padding: 2em;
   text-align: center;
 }
 .access {
   display: inline;
   background-color: darkred;
-  color: #ffffff;
+  color: whitesmoke;
   padding: 0.3em;
 }
 .navbar .col-md-3 {
@@ -70,24 +64,24 @@ nav {
 .font,
 .font-type {
   display: inline;
-  border: 2px solid #ffffff;
+  border: 2px solid whitesmoke;
   padding: 0.3em;
   margin: 0.3em;
 }
 .font:hover,
 .font-type:hover {
-  background-color: #ffffff;
+  background-color: whitesmoke;
   color: black;
   cursor: pointer;
 }
 .exit {
   display: inline;
   background-color: darkred;
-  color: #ffffff;
+  color: whitesmoke;
   padding: 0.5em;
 }
 .home {
-  background-color: white;
+  background-color: whitesmoke;
   text-decoration: none;
   color: darkred;
   cursor: pointer;
@@ -96,7 +90,7 @@ nav {
   color: go;
 }
 .exit:hover {
-  background-color: white;
+  background-color: whitesmoke;
   text-decoration: none;
   color: darkred;
   cursor: pointer;
@@ -131,7 +125,7 @@ ul li {
 }
 /* styles for index pages*/
 .content {
-  background: #ffffff;
+  background: whitesmoke;
   flex-direction: column;
   min-height: 100vh;
 }
@@ -147,7 +141,7 @@ ul li {
   border-radius: 10px;
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.4);
   padding: 30px;
-  color: white;
+  color: whitesmoke;
   background-color: #007bff;
   text-align: center;
   border: 1px solid #007bff;
@@ -155,7 +149,7 @@ ul li {
   margin: 20px auto;
 }
 .reasons span {
-  border-left: 2px dashed white;
+  border-left: 2px dashed whitesmoke;
   margin-left: 10px;
   padding-left: 10px;
   font-size: 20px;
@@ -167,7 +161,7 @@ ul li {
 .reasons:hover,
 .reasons:visited {
   color: #007bff;
-  background-color: white;
+  background-color: whitesmoke;
   cursor: pointer;
 }
 .questions {
@@ -175,7 +169,7 @@ ul li {
   border-bottom-left-radius: 0;
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.4);
   padding: 25px 15px;
-  color: white;
+  color: whitesmoke;
   background-color: #007bff;
   font-size: 18px;
   text-align: center;
@@ -187,14 +181,14 @@ ul li {
 .questions:hover,
 .questions:visited {
   color: #007bff;
-  background-color: white;
+  background-color: whitesmoke;
   cursor: pointer;
 }
 
 /* styles for messages display div*/
 .recomend {
   background-color: green;
-  color: white;
+  color: whitesmoke;
   padding: 20px;
   text-align: center;
   width: 100%;
@@ -207,13 +201,13 @@ form {
 select {
   width: 200px;
   padding: 0.2em;
-  background-color: #ffffff;
+  background-color: whitesmoke;
   border: 1px solid darkred;
 }
 .text-input {
   width: 400px;
   padding: 20px;
-  background-color: #ffffff;
+  background-color: whitesmoke;
   border: 2px solid #007bff;
   color: #6610f2;
 }
@@ -230,12 +224,12 @@ select {
   margin: auto;
   padding: 1em;
   background-color: #6610f2;
-  color: white;
+  color: whitesmoke;
   text-align: center;
 }
 .btn:hover,
 .btn:visited {
-  color: white;
+  color: whitesmoke;
   background-color: #007bff;
 }
 .btn-primary {
@@ -260,6 +254,19 @@ footer {
   padding: 1em;
   margin-top: 2em;
 }
+.accessible {
+  text-align: left;
+  border: 10px solid silver;
+  background-color: #ffff;
+  width: 100%;
+  margin: auto;
+}
+.accessible li {
+  margin-left: 5px 5px 0px 5px;
+  text-align: left;
+  border-left: 2px solid darkgreen;
+  padding-left: 10px;
+}
 .container h2 {
   text-align: left;
 }
@@ -269,7 +276,7 @@ footer {
 .tabscontent {
   display: block;
   margin: 1em auto;
-  background-color: white;
+  background-color: whitesmoke;
   padding: 1em;
 }
 .info {
@@ -296,7 +303,7 @@ footer {
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
   background-color: #6610f2;
-  color: white;
+  color: whitesmoke;
   border-radius: 0;
 }
 .tab-pane ul {
@@ -329,7 +336,7 @@ footer {
 .modal-body textarea,
 .modal-body select {
   padding: 0.3em;
-  background-color: #ffffff;
+  background-color: whitesmoke;
   border: 2px solid #007bff;
   margin-bottom: 0.5em;
   color: #6610f2;
@@ -372,10 +379,10 @@ footer {
 }
 .nav-item {
   text-decoration: none;
-  color: #ffffff;
+  color: whitesmoke;
 }
 .admin-nav:hover {
-  color: #ffffff;
+  color: whitesmoke;
 }
 .admin {
   margin: 0;
