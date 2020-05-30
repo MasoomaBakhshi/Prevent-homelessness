@@ -10,7 +10,7 @@ const loggers = {
 
 module.exports = {
   development: {
-    sitename: 'Prevent Homelessness [development]',
+    sitename: 'SWITCH FROM UNPLEASANT SCENARIO TO PLEASANT [development]',
     log: loggers.development,
     data: {
       images: path.join(__dirname, '../data/images'),
@@ -20,7 +20,7 @@ module.exports = {
     },
   },
   production: {
-    sitename: 'Prevent Homelessness',
+    sitename: 'SWITCH FROM UNPLEASANT SCENARIO TO PLEASANT',
     log: loggers.production,
     data: {
       images: path.join(__dirname, '../data/images'),
@@ -30,7 +30,7 @@ module.exports = {
     },
   },
   test: {
-    sitename: 'Prevent Homelessness [Test]',
+    sitename: 'SWITCH FROM UNPLEASANT SCENARIO TO PLEASANT [Test]',
     log: loggers.test,
     data: {
       images: path.join(__dirname, '../data/images'),
